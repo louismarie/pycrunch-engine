@@ -53,7 +53,7 @@ class PyTestRunnerEngine(_abstract_runner.Runner):
                     # Todo: this is too late to check for debugger existence.
                     #   Need verify before `debug` button click
                     import pydevd_pycharm
-                    pydevd_pycharm.settrace('127.0.0.1', suspend=False, port=self.child_config.remote_debug_port, stdoutToServer=True, stderrToServer=True)
+                    pydevd_pycharm.settrace('172.17.0.1', suspend=False, port=self.child_config.remote_debug_port, stdoutToServer=True, stderrToServer=True)
                 except ModuleNotFoundError as e:
                     print('---\nFailed to import pydevd_pycharm', file=sys.__stdout__)
                     print('  Make sure you install pudb pycharm bindings by running:', file=sys.__stdout__)
